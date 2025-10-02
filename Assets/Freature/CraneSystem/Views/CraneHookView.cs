@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class CraneHookView : MonoBehaviour
+public class CraneHookView : AbstractCraneHookView
 {
     [Header("Audio")]
     [SerializeField] private AudioSource _audioSource;
@@ -8,9 +8,9 @@ public class CraneHookView : MonoBehaviour
 
     private void Awake() => SetupAudio();
 
-    public void PlaySoundMove() => _audioSource.Play();
+    public override void PlaySoundMove() => _audioSource.Play();
 
-    public void StopSoundMove() => _audioSource.Stop();
+    public override void StopSoundMove() => _audioSource.Stop();
 
     private void SetupAudio()
     {

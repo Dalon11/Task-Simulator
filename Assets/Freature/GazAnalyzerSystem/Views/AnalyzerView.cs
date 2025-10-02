@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class AnalyzerView : MonoBehaviour, IAnalyzerView
+public class AnalyzerView : AbstractAnalyzerView
 {
     [Header("UI")]
     [SerializeField] private Image _displayImage;
@@ -15,48 +15,48 @@ public class AnalyzerView : MonoBehaviour, IAnalyzerView
 
     private void Awake() => Init();
 
-    public void PowerOn()
+    public override void PowerOn()
     {
         _displayImage.color = _displayOnColor;
         ShowDisplayImage();
         ShowDisplayText();
     }
 
-    public void PowerOff()
+    public override void PowerOff()
     {
         HideDisplayText();
         HideDisplayImage();
     }
 
-    public void UpdatePowerOn(float delta)
+    public override void UpdatePowerOn(float delta)
     {
         Color currentColor = Color.Lerp(_displayOffColor, _displayOnColor, delta);
         _displayImage.color = currentColor;
     }
 
-    public void UpdatePowerOff(float delta)
+    public override void UpdatePowerOff(float delta)
     {
         Color currentColor = Color.Lerp(_displayOnColor, _displayOffColor, delta);
         _displayImage.color = currentColor;
     }
 
-    public void ShowDisplayImage() => _displayImage.gameObject.SetActive(true);
+    public override void ShowDisplayImage() => _displayImage.gameObject.SetActive(true);
 
-    public void HideDisplayImage()
+    public override void HideDisplayImage()
     {
         _displayImage.color = _displayOffColor;
         _displayImage.gameObject.SetActive(false);
     }
 
-    public void ShowDisplayText() => _displayText.gameObject.SetActive(true);
+    public override void ShowDisplayText() => _displayText.gameObject.SetActive(true);
 
-    public void HideDisplayText()
+    public override void HideDisplayText()
     {
         _displayText.gameObject.SetActive(false);
         UpdateDistanceText(0f);
     }
 
-    public void UpdateDistanceText(float distance) => _displayText.text = string.Format(_template, distance);
+    public override void UpdateDistanceText(float distance) => _displayText.text = string.Format(_template, distance);
 
     private void Init()
     {

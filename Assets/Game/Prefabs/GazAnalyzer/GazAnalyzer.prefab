@@ -1644,8 +1644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _view: {fileID: 857581359035868879}
-  _model:
-    _powerToggleTime: 3
+  _model: {fileID: 11400000, guid: 4e04cc8d187193040b78c7223a3444ee, type: 2}
 --- !u!1 &1837744324592278894
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 public class AnalyzerProbeController : MonoBehaviour
 {
     [SerializeField] private Transform _probe;
-    [SerializeField] private AnalyzerProbeModel _model;
+    [SerializeField] private AbstractAnalyzerProbeModel _model;
 
     private void Start() => FindDangerZones();
 

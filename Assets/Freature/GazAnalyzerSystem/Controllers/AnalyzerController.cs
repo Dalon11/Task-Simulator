@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class AnalyzerController : MonoBehaviour
 {
-    [SerializeField] public AnalyzerView _view;
-    [SerializeField] private AnalyzerModel _model;
+    [SerializeField] public AbstractAnalyzerView _view;
+    [SerializeField] private AbstractAnalyzerModel _model;
 
     private AnalyzerStateMachine _stateMachine;
 
-    public float PowerToggleTime => _model._powerToggleTime;
+    public float PowerToggleTime => _model.PowerToggleTime;
     public bool IsOperational => _stateMachine.CurrentState == AllAnalyzerStates.On;
 
     private readonly AnalyzerStateFactory _stateFactory = new AnalyzerStateFactory();

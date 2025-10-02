@@ -3,7 +3,7 @@
 public class CraneHookController : BaseCraneController<IHookMovementModel>
 {
     [Space]
-    [SerializeField] private CraneHookView _view;
+    [SerializeField] private AbstractCraneHookView _view;
     [Space]
     [SerializeField] private Transform _winchDrum;
 

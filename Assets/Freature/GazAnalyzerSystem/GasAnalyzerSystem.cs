@@ -2,9 +2,9 @@ using System.Collections;
 using UnityEngine;
 
 public class GasAnalyzerSystem : MonoBehaviour
-{
-    [Header("References")]
+{ 
     [SerializeField] private AbstractGazAnalyzerButtonInput _input;
+    [Space]
     [SerializeField] private AnalyzerProbeController _probeController;
     [SerializeField] private AnalyzerController _analyzerController;
     [Space]

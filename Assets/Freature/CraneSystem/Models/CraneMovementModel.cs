@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = nameof(CraneMovementModel), menuName = "Models/" + nameof(CraneMovementModel))]
+[CreateAssetMenu(fileName = nameof(CraneMovementModel), menuName = "Models/Crane/" + nameof(CraneMovementModel))]
 public class CraneMovementModel : AbstractCraneMovementModel
 {
     [Header("Movement Speeds")]
